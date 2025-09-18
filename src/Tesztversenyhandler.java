@@ -68,4 +68,17 @@ public class Tesztversenyhandler {
 
         return null;
     }
+
+    public String eltalaltaStr (String tippek){
+
+        String result = "";
+        for (int i = 0; i < tippek.length(); i++) {
+            if (tippek.charAt(i) == getHelyes().charAt(i)){
+                result += "+";
+            } else {
+                result += " ";
+            }
+        }
+        return result;
+    }
 }

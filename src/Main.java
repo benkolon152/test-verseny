@@ -26,6 +26,10 @@ public class Main {
         System.out.println(valaszai + "   (a versenyző válaszai)");
         System.out.println();
 
+        System.out.println("4.feladat:");
+        System.out.println(handler.getHelyes() + "   (a helyes válaszok)");
+        System.out.println(handler.eltalaltaStr(valaszai) + "   (a versenyző helyes válaszai)");
+
         debugger();
     }
 }
