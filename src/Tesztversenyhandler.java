@@ -96,7 +96,22 @@ public class Tesztversenyhandler {
     }
 
     public void countPoints(){
-
+        for (int i = 0; i < getValaszokDb(); i++){
+            String eltalaltaStr = eltalaltaStr(valaszok[i][1]);
+            Integer sum = 0;
+            for (int j = 0; j < eltalaltaStr.length(); j++){
+                if (eltalaltaStr.charAt(j) == '+'){
+                    switch (j){
+                        case 0, 1, 2, 3, 4 -> sum += 3;
+                        case 5, 6, 7, 8, 9 -> sum += 4;
+                        case 10, 11, 12 -> sum += 5;
+                        case 13, 14 -> sum += 6;
+                    }
+                }
+            }
+            valaszok[i][2] = sum.toString();
+            debugger();
+        }
     }
 
     public void pointsToFile(String fileName){
