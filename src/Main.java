@@ -29,6 +29,13 @@ public class Main {
         System.out.println("4.feladat:");
         System.out.println(handler.getHelyes() + "   (a helyes válaszok)");
         System.out.println(handler.eltalaltaStr(valaszai) + "   (a versenyző helyes válaszai)");
+        System.out.println();
+
+        System.out.print("5.feladat: A feladat sorszáma = ");
+        int feladatSorszam = Integer.parseInt(in.nextLine());
+        double[] helyesFeladatStat = handler.helyesFeladatStat(feladatSorszam);
+        System.out.println("A feladatra " +(int)helyesFeladatStat[0]+ " fő, a versenyzők " +Math.round(helyesFeladatStat[1] * 100.0) / 100.0 +"%-a adott helyes választ.");
+        System.out.println();
 
         debugger();
     }

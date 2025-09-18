@@ -81,4 +81,15 @@ public class Tesztversenyhandler {
         }
         return result;
     }
+
+    public double[] helyesFeladatStat(int feladatSorszam){
+        double[] result = new double[2];
+        for (int i = 0; i < getValaszokDb(); i++) {
+            if (eltalaltaStr(valaszok[i][1]).charAt(feladatSorszam - 1) == '+'){
+                result[0]++;
+            }
+        }
+        result[1] = result[0] / getValaszokDb() * 100.0;
+        return result;
+    }
 }
