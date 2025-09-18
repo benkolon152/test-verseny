@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Tesztversenyhandler {
     private String helyes;
     private String [][] valaszok;
@@ -18,8 +23,17 @@ public class Tesztversenyhandler {
         this.valaszok = valaszok;
     }
 
-    public Tesztversenyhandler readFile(String fileName) {
-        //TODO -- bolvasas
+    private void debugger(){
+        int i = 0;
+    }
+
+    public Tesztversenyhandler readFile(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()){
+            String line = scanner.nextLine();
+        }
+
         return this;
     }
 }
