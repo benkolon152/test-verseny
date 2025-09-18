@@ -49,7 +49,10 @@ public class Tesztversenyhandler {
         while (scanner.hasNextLine()){
             String line = scanner.nextLine();
             String[] split = line.split(" ");
-            valaszok[getValaszokDb()] = split;
+
+            valaszok[getValaszokDb()] = new String[3];
+            valaszok[getValaszokDb()][0] = split[0];
+            valaszok[getValaszokDb()][1] = split[1];
 
             setValaszokDb(getValaszokDb()+1);
         }

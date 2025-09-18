@@ -39,7 +39,7 @@ public class Main {
 
         System.out.println("6.feladat: A versenyzők pontszámának meghatározása.");
         handler.countPoints();
-        handler.pointsToFile();
+        handler.pointsToFile("pontok.txt");
         System.out.println();
 
         debugger();
