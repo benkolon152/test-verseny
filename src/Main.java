@@ -14,6 +14,10 @@ public class Main {
         System.out.println("1. feladat: Az adatok beolvasása");
         handler.readFile("scourcefiles/valaszok.txt");
         System.out.println();
+
+        System.out.println("2.feladat: A vetélkedőn " + handler.getValaszokDb() + " versenyző indult.");
+        System.out.println();
+
         debugger();
     }
 }
