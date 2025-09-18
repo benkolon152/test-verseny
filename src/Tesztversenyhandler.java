@@ -1,6 +1,8 @@
 import java.io.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Tesztversenyhandler {
     private String helyes;
@@ -120,5 +122,21 @@ public class Tesztversenyhandler {
             fwki.write(valaszok[i][0] + ";"+ valaszok[i][2]+"\n");
         }
         fwki.close();
+    }
+
+    public Set<Integer> pointSet (){
+        Set<Integer> result = new HashSet<>();
+        for (int i = 0; i < getValaszokDb(); i++){
+            result.add(Integer.parseInt(valaszok[i][2]));
+        }
+        return result;
+    }
+
+    public void printWinners(int points1, int points2, int points3){
+        for (int i = 0; i < getValaszokDb(); i++){
+            if (Integer.parseInt(valaszok[i][2]) == points1){
+                System.out.println("1.díj (" + points1+" pont): " + valaszok[i][0]);
+            }
+        }
     }
 }
