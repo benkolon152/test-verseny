@@ -1,4 +1,3 @@
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Objects;
@@ -91,5 +90,13 @@ public class Tesztversenyhandler {
         }
         result[1] = result[0] / getValaszokDb() * 100.0;
         return result;
+    }
+
+    public void countPoints(){
+
+    }
+
+    public void pointsToFile(String fileName){
+
     }
 }

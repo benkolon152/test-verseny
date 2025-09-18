@@ -37,6 +37,11 @@ public class Main {
         System.out.println("A feladatra " +(int)helyesFeladatStat[0]+ " fő, a versenyzők " +Math.round(helyesFeladatStat[1] * 100.0) / 100.0 +"%-a adott helyes választ.");
         System.out.println();
 
+        System.out.println("6.feladat: A versenyzők pontszámának meghatározása.");
+        handler.countPoints();
+        handler.pointsToFile();
+        System.out.println();
+
         debugger();
     }
 }
