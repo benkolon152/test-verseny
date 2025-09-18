@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Tesztversenyhandler {
     private String helyes;
     private String [][] valaszok;
+    private int valaszokDb;
 
     public String getHelyes() {
         return helyes;
@@ -23,16 +24,36 @@ public class Tesztversenyhandler {
         this.valaszok = valaszok;
     }
 
+    public int getValaszokDb() {
+        return valaszokDb;
+    }
+
+    public void setValaszokDb(int valaszokDb) {
+        this.valaszokDb = valaszokDb;
+    }
+
     private void debugger(){
         int i = 0;
+    }
+
+    public Tesztversenyhandler(){
+        valaszok = new String[500][];
     }
 
     public Tesztversenyhandler readFile(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
         Scanner scanner = new Scanner(file);
+
+        setHelyes(scanner.nextLine());
+        setValaszokDb(0);
         while (scanner.hasNextLine()){
             String line = scanner.nextLine();
+            String[] split = line.split(" ");
+            valaszok[getValaszokDb()] = split;
+
+            setValaszokDb(getValaszokDb()+1);
         }
+        debugger();
 
         return this;
     }
