@@ -6,6 +6,12 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
+
+    public static boolean isRunningtest = false;
+
+    private static final String testAzon = "AB123";
+    private static final int testFeladatsorsz = 10;
+
     private static Tesztversenyhandler handler;
 
     private static void debugger(){
@@ -25,7 +31,7 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
         System.out.print("3.feladat: A versenyző azonosítója = ");
-        String id = in.nextLine();
+        String id = isRunningtest ? testAzon : in.nextLine();
         String valaszai = handler.valaszai(id);
         System.out.println(valaszai + "   (a versenyző válaszai)");
         System.out.println();
@@ -36,7 +42,7 @@ public class Main {
         System.out.println();
 
         System.out.print("5.feladat: A feladat sorszáma = ");
-        int feladatSorszam = Integer.parseInt(in.nextLine());
+        int feladatSorszam = isRunningtest ? testFeladatsorsz : Integer.parseInt(in.nextLine());
         double[] helyesFeladatStat = handler.helyesFeladatStat(feladatSorszam);
         System.out.println("A feladatra " +(int)helyesFeladatStat[0]+ " fő, a versenyzők " +Math.round(helyesFeladatStat[1] * 100.0) / 100.0 +"%-a adott helyes választ.");
         System.out.println();
